@@ -169,7 +169,7 @@ class XHMMDecoder():
 
     def __get_beat_arr(self,entry,length,use_beats,use_downbeats):
         delta_time=entry.prop.hop_length/entry.prop.sr
-        beat_arr=np.ones((length,),dtype=np.int328)
+        beat_arr=np.ones((length,),dtype=np.int32)
         if(use_beats):
             valid_beats=[(int(np.round(token[0]/delta_time)),int(np.round(token[1]))) for token in entry.beat]
             valid_beats=[(token[0],token[1]) for token in valid_beats if token[0]>=0 and token[0]<beat_arr.shape[0]]
